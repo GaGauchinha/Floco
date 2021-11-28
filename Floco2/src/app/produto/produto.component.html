@@ -1,0 +1,59 @@
+<p>Lista de Marcas!</p>
+<app-produto></app-produto>
+<ul>
+    <li *ngFor="let Marcas for Marcas">
+        {{Marcas}}
+    </li>
+</ul>
+<link rel="stylesheet" href="/styles.css">
+<div id="menu">
+
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+    <a class="navbar-brand" href="#">
+      <img src="imagens/logo/floco.png">
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="../cliente/cliente.component.html">Cadastro Cliente</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="produto.component.html">Cadastro Produtos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../app.component.html">Comprar Produto</a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link" href="../encomenda/encomenda.component.html">Encomenda</a>
+          </li>
+      </ul>
+    </div>
+</nav>
+</div>
+  <form class="row g-3">
+    <div class="col-md-6">
+      <label for="NomeProduto" class="form-label">Nome Produto</label>
+      <input type="text" class="form-control" id="NomeProduto">
+    </div>
+    <div class="col-md-6">
+      <label for="Marca" class="form-label">Marca</label>
+      <input type="text" class="form-control" id="Marca">
+    </div>
+    <div class="col-12">
+      <label for="QuantiaEstoque" class="form-label">Quantia em Estoque</label>
+      <input type="text" class="form-control" id="QuantiaEstoque">
+    </div>
+    <div class="col-12">
+      <label for="Preco" class="form-label">Preço</label>
+      <input type="date" class="form-control" id="Preco">
+    </div>
+     <div class="col-12">
+      <button type="submit" class="btn btn-primary">Cadastrar Produto</button>
+    </div>
+  </form>
