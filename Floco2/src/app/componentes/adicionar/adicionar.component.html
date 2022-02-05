@@ -1,0 +1,15 @@
+<div>
+    <div class="submit-form">
+        <div *ngIf="!submitted">
+            <div class="form-group"><label for="title">Formulátio</label><input type="text" class="form-control" id="title"
+                    required [(ngModel)]="funcao.title" name="title" /></div>
+            <div class="form-group"><label for="description">Description</label><input class="form-control"
+                    id="description" required [(ngModel)]="funcao.description" name="description" /></div><button
+                (click)="saveFuncao()" class="btn btn-success">Submit</button>
+        </div>
+        <div *ngIf="submitted">
+            <h4>Função foi executada!</h4><button class="btn btn-success"
+                (click)="newFuncao()">Adicionar</button>
+        </div> 
+    </div>
+</div>
