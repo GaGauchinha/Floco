@@ -1,0 +1,48 @@
+CREATE TABLE Usuario(
+  	id_usuario int UNIQUE,
+	nome_usuario varchar,
+  	email VARCHAR (50),
+	tipodoc varchar,
+	doc long,
+  	senha VARCHAR (50),
+  	data_nascimento date,
+  	endereco VARCHAR (50),
+	ativo boolean,
+  	PRIMARY KEY (id_usuario)
+);
+CREATE TABLE Equipe(
+id_usuario int UNIQUE,
+    funcao VARCHAR (20),
+    salario VARCHAR(200),
+    PRIMARY KEY (id_usuario)
+);
+create table Tipos(
+	id_tipo int;
+	nome_tipo varchar;
+	primary key (id_tipo)
+);
+create table Usuariotipos(
+	id_usuario int,
+	id_tipo int,
+	primary key (id_tipo, id_usuario)
+);
+
+CREATE TABLE Produto(
+	id_produto INT UNIQUE,
+  	id_usuario int,
+    nome_produto VARCHAR (50),
+	marca VARCHAR (50),
+    preco VARCHAR (50),
+    FOREIGN KEY (id_fornecedor ) REFERENCES  Fornecedor (id_fornecedor ),
+    PRIMARY KEY (id_produto)
+);
+CREATE TABLE Pedido(
+	id_pedido int UNIQUE,
+  	id_produto int,
+  	id_cliente int,
+    data_entrega date,
+    quantidade int,
+    FOREIGN key (id_produto) references  Produto (id_produto),
+    FOREIGN KEY (id_cliente) references  Cliente (id_cliente),
+    PRIMARY KEY (id_pedido)
+);
